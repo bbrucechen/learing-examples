@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	手机号码:<input type="number" name=""> <button type="">发送</button>
+	<script type="text/javascript">
+		var input = document.querySelector('input');
+		var button = document.querySelector('button');
+		var timer = 10; 
+		button.addEventListener('click',function() 
+		{
+			while(input.value != '') 
+			{
+				this.disabled = true;
+				var count = setInterval(function()
+				{
+					button.innerHTML = '请等待' + timer + '秒';
+					timer --;
+				}
+				,1000)
+				// if(timer == 0) 
+				// {
+				// clearInterval(count);
+				// button.disabled =false;
+				// button.innerHTML = '发送';
+				// }
+			}
+		})
+
+		
+	</script>
+</body>
+</html>

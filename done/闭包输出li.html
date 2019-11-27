@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<script type="text/javascript">
+		var lis = document.querySelectorAll('li');
+		for(var i = 0;i < lis.length;i++) {
+			(function(index){
+				lis[index].onclick = function() {
+					console.log(index);
+				}
+				setTimeout(function(){
+					console.log(lis[index].innerHTML);
+				},2000)
+			})(i);
+		}
+	</script>
+</body>
+</html>

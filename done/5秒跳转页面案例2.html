@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		浏览器将在5秒后跳转
+	</div>
+	<script type="text/javascript">
+		var div = document.querySelector('div');
+		var time = 4;
+		var timer = setInterval(function(){
+			div.innerHTML = '浏览器将在' + time +'秒后跳转';
+			time --;
+			if(time < 0) {
+				clearInterval(timer);
+				location.href = 'https://www.baidu.com';
+			}
+		},1000)
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		table {
+			width: 500px;
+			margin:  100px auto;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		td,
+		th {
+			border: 1px solid #333;
+		}
+		thead tr {
+			height: 40px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>科目</th>
+				<th>成绩</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var dates = [
+		{
+			name: '李小龙',
+			subject: 'javascript',
+			score: 100
+		},
+		{
+			name: '成龙',
+			subject: 'javascript',
+			score: 100
+		},
+		{
+			name: '李连杰',
+			subject: 'javascript',
+			score: 100
+		},
+		{
+			name: '成奎',
+			subject: 'javascript',
+			score: 100
+		},
+		{
+			name: '公钥',
+			subject: 'javascript',
+			score: 100
+		}
+		]
+
+		var tbody = document.querySelector("tbody");
+		dates.forEach(function(value,index){
+			var tr = document.createElement("tr");
+			tr.innerHTML = "<th>" + value.name + "</th>" + "<th>" + value.subject + "</th>" + "<th>" + value.score + "</th>" + "<th><a href='JavaScript:;'' title=''>删除</a></th>";
+			tbody.append(tr);
+		})
+
+		var a = document.querySelectorAll("a");
+		for(var i = 0;i < a.length;i++) {
+			a[i].onclick = function(){
+				tbody.removeChild(this.parentNode.parentNode);
+			}
+		}
+	</script>
+</body>
+</html>

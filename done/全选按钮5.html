@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		table {
+			width: 300px;
+			height: 400px;
+			margin: 300px auto;
+		}
+		table thead {
+			background-color: blue;
+			color: #fff;
+		}
+		th {
+			height: 70px;
+			border-right: 1px solid red;
+			border-collapse: collapse;
+		}
+		td {
+			background-color: #ccc;
+			padding-left: 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<input type="checkbox" name="" >
+				</th>
+				<th>商品</th>
+				<th>价钱</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>		
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var checkAll = document.querySelector("th input");
+		var checkSingle = document.querySelectorAll("td input");
+		checkAll.addEventListener("click",function(){
+			checkSingle.forEach(function(value,index){
+				value.checked = checkAll.checked;
+			})
+		})
+		function IsCheckAll() {
+			var checked = 0;
+			checkSingle.forEach(function(value,index){
+				if(value.checked) {
+					checked ++;
+				}
+			})
+			if(checked == 4) {
+				return true; 
+			} else {
+				return false;
+			}
+		}
+		for(var i = 0;i < checkSingle.length;i++) {
+			checkSingle[i].onclick = function() {
+				checkAll.checked = IsCheckAll();
+			}
+		}
+	</script>
+</body>
+</html>

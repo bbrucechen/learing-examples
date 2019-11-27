@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		li {
+			list-style: none;
+		}
+		.fatheropi>li ul {
+			margin: 0;
+			padding: 0;
+			display: none;
+		}
+		.fatheropi>li {
+			float: left;
+		}
+		.fatheropi>li li {
+			border: 1px solid orange;
+			padding: 10px;
+			cursor: pointer;
+		}
+		a {
+			display: block;
+			padding: 10px;
+			text-decoration: none;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<ul class="fatheropi">
+		<li>
+			<a href="#">微博</a>
+			<ul>
+				<li>私信</li>
+				<li>评论</li>
+				<li>@我</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">微博</a>
+			<ul>
+				<li>私信</li>
+				<li>评论</li>
+				<li>@我</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">微博</a>
+			<ul>
+				<li>私信</li>
+				<li>评论</li>
+				<li>@我</li>
+			</ul>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		var as = document.querySelectorAll("a");
+		var ul = document.querySelectorAll(".fatheropi ul");
+		as.forEach(function(value,index){
+			console.log(value);
+			value.setAttribute("index",index);
+			value.onmouseover  = function(){
+				ul.forEach(function(value,index){
+					value.style.display  = 'none';
+				})
+				ul[this.getAttribute("index")].style.display = "block";
+			}
+		})
+	</script>
+</body>
+</html>

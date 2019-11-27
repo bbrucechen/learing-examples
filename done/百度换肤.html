@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		img {
+			width: 100px;
+			height: 100px;
+			display: block;
+			float: left;
+			border:3px solid red;
+			box-sizing: border-box;
+		}
+		.photo {
+			height: 100px;
+			width: 400px;
+			margin: 300px auto;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="photo">
+		<img src="1.jpg" alt="">
+		<img src="1291fadcd100baa1706c1da04d10b912c9fc2e91.jpg" alt="">
+		<img src="1c23a2ec08fa513d2b70d5a3376d55fbb3fbd925.jpg" alt="">
+		<img src="2d400afa513d26975709b1205ffbb2fb4216d825.jpg" alt="">
+	</div>
+	<script type="text/javascript">
+		var body = document.body;
+		var img = document.querySelectorAll('img');
+		for(var i = 0 ;i< img.length;i++) {
+			img[i].onclick = function() {
+				body.style.background = 'url('+this.src+')';
+				body.style.backgroundSize = 'cover';
+			}
+		}
+	</script>
+</body>
+</html>

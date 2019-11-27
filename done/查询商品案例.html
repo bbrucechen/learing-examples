@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var data = [{
+			id:1,
+			pname:'小米',
+			price:1200
+		},{
+			id:1,
+			pname:'小米',
+			price:2000
+		},{
+			id:1,
+			pname:'小米',
+			price:300
+		},{
+			id:1,
+			pname:'小米',
+			price:3999
+		}]
+		// 1.获取相应元素
+		var tbody = document.querySelector('tbody');
+		var search_price = document.querySelector('.search-price');
+		var start = document.querySelector('.start');
+		var end = document.querySelector('.end');
+		var product = document.querySelector('.product');
+		var search_pro = document.querySelector('.search-pro');
+		setDate(data);
+		// 渲染数据
+		function setDate(mydata) {
+			tbody.innerHTML = '';
+			mydata.forEach(function(value) {
+			var tr = document.createElement('tr');
+			tr.innerHTML = '<td>'+value.id+'</td><td>'+value.pname+'</td><td>'+value.price+'</td>';
+			tbody.appendChild(tr);
+		})
+		}
+		// 价格搜索
+		search_price.addEventListener('click',function() {
+			var newDate = data.filter(function(value) {
+				return (value.price >= start.value && value.price <= end.value)
+			})
+			setDate(newDate);
+		})
+
+		// 如果查询唯一的元素，用some方法更合适 因为查找到之后就停止查找了
+		search_pro.addEventListener('click',function() {
+			var arr=[];
+			data.some(function(value) {
+				if(value.pname === product.value) {
+					arr.push(value);
+					return true;
+				}
+			})
+			// 把拿到的数据渲染到页面中
+			setDate(arr);
+		})
+	</script>
+</body>
+</html>

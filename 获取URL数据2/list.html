@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<script>
+		var userID = location.search.substr(1);
+		userName = userID.split('=');
+		var div = document.querySelector('div');
+		div.innerHTML = '欢迎你'+userName[1];
+	</script>
+</body>
+</html>

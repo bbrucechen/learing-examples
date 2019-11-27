@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		img {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<img src="angle.gif">
+</body>
+<script type="text/javascript">
+	var angle = document.querySelector("img");
+	window.addEventListener("mousemove",function(e) {
+		angle.style.left = e.pageX - (angle.offsetWidth / 2) + 'px';
+		angle.style.top = e.pageY - (angle.offsetHeight / 2) + 'px';
+	})
+</script>
+</html>

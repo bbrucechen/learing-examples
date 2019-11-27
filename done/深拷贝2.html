@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {
+			id:1,
+			name:'andy',
+			msg:{
+				age:18
+			},
+			color:['pink','red']
+		}
+		var o = {};
+
+		function deepCopy(newObj,oldObj) {
+			for(var k in oldObj) {
+				if(oldObj[k] instanceof Array) {
+					newObj[k] = [];
+					deepCopy(newObj[k],oldObj[k])
+				} else if(oldObj[k] instanceof Object) {
+					newObj[k] = {};
+					deepCopy(newObj[k],oldObj[k]);
+				} else {
+					newObj[k] = oldObj[k];
+				}
+			}
+		}
+		deepCopy(o,obj);
+		console.log(o);
+	</script>
+</body>
+</html>

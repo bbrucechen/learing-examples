@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function fb(num) {
+			if(num == 2 || num == 1) {
+				return 1;
+			}
+			return fb(num - 1)+fb(num - 2);
+		}
+
+		console.log(fb(8));
+	</script>
+</body>
+</html>

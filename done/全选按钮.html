@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		table {
+			width: 300px;
+			height: 400px;
+			margin: 300px auto;
+		}
+		table thead {
+			background-color: blue;
+			color: #fff;
+		}
+		th {
+			height: 70px;
+			border-right: 1px solid red;
+			border-collapse: collapse;
+		}
+		td {
+			background-color: #ccc;
+			padding-left: 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+		<table>
+		<thead>
+			<tr>
+				<th>
+					<input type="checkbox" name="" >
+				</th>
+				<th>商品</th>
+				<th>价钱</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>		
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var input = document.querySelector('thead').querySelector('input');
+		var inputs = document.querySelector('tbody').querySelectorAll('input');
+		input.onclick = function() {
+			for(var i = 0;i < inputs.length;i++) {
+				inputs[i].checked = this.checked;
+			}
+ 		}
+
+ 		for(var i =0 ;i < inputs.length;i++) {
+ 			inputs[i].onclick = function() {
+ 				var flag = true;
+ 				for(var j =0 ;j < inputs.length;j++) {
+ 					if(!inputs[j].checked) {
+ 						flag =false;
+ 					}
+ 				}
+ 				input.checked = flag;
+ 			}
+ 		}
+	</script>
+</body>
+</html>

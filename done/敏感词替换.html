@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea name=""></textarea> <button type="">提交</button>
+	<div>
+		
+	</div>
+	<script type="text/javascript">
+		var text = document.querySelector('textarea');
+		var btn = document.querySelector('button');
+		var div = document.querySelector('div');
+		btn.onclick = function() {
+			div.innerHTML = text.value.replace(/激情|gay/g,'**');
+		}
+
+	</script>
+</body>
+</html>

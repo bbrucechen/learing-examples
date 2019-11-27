@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>页面将在5秒后跳转</div>
+	<script type="text/javascript">
+		var timer =4;
+		var div =document.querySelector('div');
+		setInterval(function() {
+			div.innerHTML = '页面将在' + timer + '秒后跳转';
+			timer --;
+			if(timer == -1) {
+				location.href = 'https://www.baidu.com';
+			}
+		},1000)
+	</script>
+</body>
+</html>

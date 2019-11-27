@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<style type="text/css" media="screen">
+		img {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<img src="angle.gif">
+</body>
+<script type="text/javascript">
+	var img= document.querySelector("img");
+	window.onmousemove = function(e){
+		var moveX = e.pageX;
+		var moveY = e.pageY;
+		var w = img.offsetWidth / 2;
+		var h = img.offsetHeight / 2;
+		img.style.left = moveX - w + 'px';
+		img.style.top = moveY - h + 'px'
+	}
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<style type="text/css" media="screen">
+		img {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<img src="angle.gif">
+</body>
+<script type="text/javascript">
+	$(window).on("mousemove",function(e){
+		var w = $("img").width() / 2;
+		var h = $("img").height() / 2;
+		$("img").css({"left":e.pageX - w,"top":e.pageY - h});
+	})
+</script>
+</html>

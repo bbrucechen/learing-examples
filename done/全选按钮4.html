@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		table {
+			width: 300px;
+			height: 400px;
+			margin: 300px auto;
+		}
+		table thead {
+			background-color: blue;
+			color: #fff;
+		}
+		th {
+			height: 70px;
+			border-right: 1px solid red;
+			border-collapse: collapse;
+		}
+		td {
+			background-color: #ccc;
+			padding-left: 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<input type="checkbox" name="" >
+				</th>
+				<th>商品</th>
+				<th>价钱</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>		
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>iPhone8</td>
+				<td>8000</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var th = document.querySelector("th input");
+		var td = document.querySelectorAll("td input");
+		th.onchange = function() {
+			td.forEach(function(value,index) {
+				td[index].checked = th.checked;
+			})
+		}
+		var k=0;
+		for(var i = 0;i < td.length;i++) {
+			td[i].onchange = function(){
+			if(this.checked) {
+				k++;
+				console.log(k);
+				if(k == td.length) {
+					th.checked = "checked";
+				}
+			} else {
+				k --;
+				th.checked = false;
+			}
+			
+			}
+		}
+		
+	</script>
+</body>
+</html>

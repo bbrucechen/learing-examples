@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="move.js" type="text/javascript" charset="utf-8" async defer></script>
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.show {
+			width :300px;
+			height: 300px;
+			border: 1px solid #ccc;
+			margin: 100px 0 0 100px;
+			position: relative;
+			cursor: move;
+		}
+		.bigpic {
+			overflow: hidden;
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			top: 100px;
+			left: 450px;
+			border: 1px solid #ccc;
+		}
+		.bigpic img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.expand {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			opacity: .3;
+		}
+	</style>
+</head>
+<body>
+	<div class="show">
+		<img src="50f8544e9258d1098bbd49b1db58ccbf6d814d87.jpg" alt="" width="300px" height="300px">
+		<div class="expand"></div>
+	</div>
+	<div class="bigpic">
+		<img src="50f8544e9258d1098bbd49b1db58ccbf6d814d87.jpg" width="750px" height="750px"
+		class="big">
+	</div>
+</body>
+</html>

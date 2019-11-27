@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		img {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<img src="angle.gif">
+</body>
+<script type="text/javascript">
+	var img = document.querySelector("img");
+	
+	window.onmousemove = function(e){
+var w = img.offsetWidth / 2;
+	var h = img.offsetHeight / 2;
+	console.log(w);
+		img.style.left = (e.pageX - w) + 'px';
+		img.style.top = (e.pageY - h) + 'px';
+	}
+</script>
+</html>
